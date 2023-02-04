@@ -9,7 +9,24 @@
 		<version>0.4-Alpha-SNAPSHOT</version>
 	</parent>
 	<artifactId>TadukooFormComponents</artifactId>
+	<dependencies>
+		<!-- Tadukoo Form Dependency -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>TadukooForm</artifactId>
+		</dependency>
+		<!-- JUnit Dependencies -->
+		<dependency>
+			<groupId>${junit.jupiter.groupID}</groupId>
+			<artifactId>${junit.jupiter.artifactID}</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>${junit.platform.groupID}</groupId>
+			<artifactId>${junit.platform.artifactID}</artifactId>
+		</dependency>
+	</dependencies>
 	<build>
 		<sourceDirectory>${directory.source}</sourceDirectory>
+		<testSourceDirectory>${directory.test}</testSourceDirectory>
 	</build>
 </project>

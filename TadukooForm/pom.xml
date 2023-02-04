@@ -10,11 +10,10 @@
 	</parent>
 	<artifactId>TadukooForm</artifactId>
 	<dependencies>
-		<!-- TadukooComponents -->
+		<!-- Tadukoo Form Fields Dependency -->
 		<dependency>
-			<groupId>${tadukoo.view.groupID}</groupId>
-			<artifactId>TadukooComponents</artifactId>
-			<version>${tadukoo.view.version}</version>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>TadukooFormFields</artifactId>
 		</dependency>
 		<!-- JUnit Dependencies -->
 		<dependency>
