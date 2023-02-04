@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.github.tadukoo.view.form</groupId>
+		<artifactId>TadukooFormParent</artifactId>
+		<version>0.4-Alpha-SNAPSHOT</version>
+	</parent>
+	<artifactId>TadukooFormJUnit</artifactId>
+	<dependencies>
+		<!-- JUnit -->
+		<dependency>
+			<groupId>${junit.jupiter.groupID}</groupId>
+			<artifactId>${junit.jupiter.artifactID}</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<!-- Tadukoo JUnit -->
+		<dependency>
+			<groupId>${tadukoo.util.groupID}</groupId>
+			<artifactId>${tadukoo.util.junit.artifactID}</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<!-- Tadukoo Form -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>TadukooForm</artifactId>
+		</dependency>
+	</dependencies>
+	<build>
+		<sourceDirectory>${directory.source}</sourceDirectory>
+		<testSourceDirectory>${directory.test}</testSourceDirectory>
+	</build>
+</project>

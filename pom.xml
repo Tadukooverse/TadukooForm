@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.github.tadukoo.maven</groupId>
+		<artifactId>TadukooMavenViewPOM</artifactId>
+		<version>0.4-Alpha-SNAPSHOT</version>
+	</parent>
+	<groupId>com.github.tadukoo.view.form</groupId>
+	<artifactId>TadukooFormParent</artifactId>
+	<version>0.4-Alpha-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<description>Utilities for making forms</description>
+	<modules>
+		<module>TadukooFormFields</module>
+		<module>TadukooForm</module>
+		<module>TadukooFormComponents</module>
+		<module>TadukooFormJUnit</module>
+	</modules>
+	<properties>
+		<!-- Info -->
+		<shortName>TadukooForm</shortName>
+		<tadukoo.util.version>0.6-Beta-SNAPSHOT</tadukoo.util.version>
+		<tadukoo.view.version>0.4-Alpha-SNAPSHOT</tadukoo.view.version>
+	</properties>
+	<dependencyManagement>
+		<dependencies>
+			<!-- TadukooFormFields Dependency -->
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>TadukooFormFields</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<!-- TadukooForm Dependency -->
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>TadukooForm</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<!-- TadukooFormComponents Dependency -->
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>TadukooFormComponents</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<!-- Tadukoo Form JUnit Dependency -->
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>TadukooFormJUnit</artifactId>
+				<version>${project.version}</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>
