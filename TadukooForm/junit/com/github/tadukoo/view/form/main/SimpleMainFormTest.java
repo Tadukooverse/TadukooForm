@@ -29,6 +29,7 @@ public class SimpleMainFormTest{
 	
 	private SimpleMainForm simpleForm;
 	private FormField<?> field;
+	private String title;
 	
 	@BeforeEach
 	public void setup() throws Throwable{
@@ -37,7 +38,13 @@ public class SimpleMainFormTest{
 				.stringFieldType(StringFormField.StringFieldType.NORMAL)
 				.key("Derp").defaultValue("No")
 				.build();
+		title = "Test Title";
 		simpleForm = new AbstractSimpleMainForm(new HashMap<>()){
+			
+			@Override
+			public String title(){
+				return title;
+			}
 			
 			@Override
 			public void setDefaultFields(){
@@ -66,6 +73,11 @@ public class SimpleMainFormTest{
 			}
 		};
 		SimpleMainForm simpleForm = new AbstractSimpleMainForm(pojo){
+			@Override
+			public String title(){
+				return title;
+			}
+			
 			@Override
 			public void setDefaultFields(){
 				weSetThoseFields = true;
@@ -264,6 +276,11 @@ public class SimpleMainFormTest{
 	}
 	
 	@Test
+	public void testTitle(){
+		assertEquals(title, simpleForm.title());
+	}
+	
+	@Test
 	public void testDefaultCloseOperation(){
 		assertEquals(CloseOperation.DISPOSE_ON_CLOSE, simpleForm.defaultCloseOperation());
 	}
@@ -279,6 +296,11 @@ public class SimpleMainFormTest{
 	}
 	
 	@Test
+	public void testConfigureFrameSettingsTitle(){
+		assertEquals(simpleForm.asFrame().getTitle(), simpleForm.title());
+	}
+	
+	@Test
 	public void testConfigureFrameSettingsCloseOperation(){
 		assertEquals(simpleForm.asFrame().getDefaultCloseOperation(), simpleForm.defaultCloseOperation().getValue());
 	}
@@ -291,6 +313,11 @@ public class SimpleMainFormTest{
 	@Test
 	public void testConfigureFrameSettingsIconPathSet() throws Throwable{
 		simpleForm = new AbstractSimpleMainForm(new HashMap<>()){
+			@Override
+			public String title(){
+				return title;
+			}
+			
 			@Override
 			public String iconPath(){
 				return "/img/meteor.png";
@@ -312,6 +339,11 @@ public class SimpleMainFormTest{
 	public void testConfigureFrameSettingsFramePreferredSizeSet() throws Throwable{
 		Dimension size = new Dimension(50, 50);
 		simpleForm = new AbstractSimpleMainForm(new HashMap<>()){
+			@Override
+			public String title(){
+				return title;
+			}
+			
 			@Override
 			public Dimension framePreferredSize(){
 				return size;

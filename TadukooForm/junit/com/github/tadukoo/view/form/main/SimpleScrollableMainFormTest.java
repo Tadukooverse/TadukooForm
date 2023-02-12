@@ -29,6 +29,7 @@ public class SimpleScrollableMainFormTest{
 	
 	private SimpleScrollableMainForm simpleScrollableForm;
 	private FormField<?> field;
+	private String title;
 	
 	@BeforeEach
 	public void setup() throws Throwable{
@@ -37,7 +38,13 @@ public class SimpleScrollableMainFormTest{
 				.stringFieldType(StringFormField.StringFieldType.NORMAL)
 				.key("Derp").defaultValue("No")
 				.build();
+		title = "Test Title";
 		simpleScrollableForm = new AbstractSimpleScrollableMainForm(new HashMap<>()){
+			
+			@Override
+			public String title(){
+				return title;
+			}
 			
 			@Override
 			public void setDefaultFields(){
@@ -66,6 +73,11 @@ public class SimpleScrollableMainFormTest{
 			}
 		};
 		simpleScrollableForm = new AbstractSimpleScrollableMainForm(pojo){
+			@Override
+			public String title(){
+				return title;
+			}
+			
 			@Override
 			public void setDefaultFields(){
 				weSetThoseFields = true;
@@ -264,6 +276,11 @@ public class SimpleScrollableMainFormTest{
 	}
 	
 	@Test
+	public void testTitle(){
+		assertEquals(title, simpleScrollableForm.title());
+	}
+	
+	@Test
 	public void testDefaultCloseOperation(){
 		assertEquals(CloseOperation.DISPOSE_ON_CLOSE, simpleScrollableForm.defaultCloseOperation());
 	}
@@ -276,6 +293,11 @@ public class SimpleScrollableMainFormTest{
 	@Test
 	public void testFramePreferredSize(){
 		assertNull(simpleScrollableForm.framePreferredSize());
+	}
+	
+	@Test
+	public void testConfigureFrameSettingsTitle(){
+		assertEquals(simpleScrollableForm.asFrame().getTitle(), simpleScrollableForm.title());
 	}
 	
 	@Test
@@ -292,6 +314,11 @@ public class SimpleScrollableMainFormTest{
 	@Test
 	public void testConfigureFrameSettingsIconPathSet() throws Throwable{
 		simpleScrollableForm = new AbstractSimpleScrollableMainForm(new HashMap<>()){
+			@Override
+			public String title(){
+				return title;
+			}
+			
 			@Override
 			public String iconPath(){
 				return "/img/meteor.png";
@@ -313,6 +340,11 @@ public class SimpleScrollableMainFormTest{
 	public void testConfigureFrameSettingsFramePreferredSizeSet() throws Throwable{
 		Dimension size = new Dimension(50, 50);
 		simpleScrollableForm = new AbstractSimpleScrollableMainForm(new HashMap<>()){
+			@Override
+			public String title(){
+				return title;
+			}
+			
 			@Override
 			public Dimension framePreferredSize(){
 				return size;

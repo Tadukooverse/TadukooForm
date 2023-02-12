@@ -40,6 +40,7 @@ public class TabbedMainFormTest{
 	private TabbedMainForm tabbedForm;
 	private SimpleForm innerForm;
 	private final List<String> keys = ListUtil.createList("yep");
+	private String title;
 	
 	@BeforeEach
 	public void setup() throws Throwable{
@@ -55,7 +56,13 @@ public class TabbedMainFormTest{
 				weSavedValues = true;
 			}
 		};
+		title = "Test Title";
 		tabbedForm = new AbstractTabbedMainForm(new HashMap<>()){
+			
+			@Override
+			public String title(){
+				return title;
+			}
 			
 			@Override
 			public List<String> getKeyOrder(){
@@ -89,6 +96,11 @@ public class TabbedMainFormTest{
 			}
 		};
 		TabbedMainForm tabbedForm = new AbstractTabbedMainForm(pojo){
+			@Override
+			public String title(){
+				return title;
+			}
+			
 			@Override
 			public List<String> getKeyOrder(){
 				return null;
@@ -319,6 +331,11 @@ public class TabbedMainFormTest{
 	}
 	
 	@Test
+	public void testTitle(){
+		assertEquals(title, tabbedForm.title());
+	}
+	
+	@Test
 	public void testDefaultCloseOperation(){
 		assertEquals(CloseOperation.DISPOSE_ON_CLOSE, tabbedForm.defaultCloseOperation());
 	}
@@ -334,6 +351,11 @@ public class TabbedMainFormTest{
 	}
 	
 	@Test
+	public void testConfigureFrameSettingsTitle(){
+		assertEquals(tabbedForm.asFrame().getTitle(), tabbedForm.title());
+	}
+	
+	@Test
 	public void testConfigureFrameSettingsCloseOperation(){
 		assertEquals(tabbedForm.asFrame().getDefaultCloseOperation(), tabbedForm.defaultCloseOperation().getValue());
 	}
@@ -346,6 +368,11 @@ public class TabbedMainFormTest{
 	@Test
 	public void testConfigureFrameSettingsIconPathSet() throws Throwable{
 		tabbedForm = new AbstractTabbedMainForm(new HashMap<>()){
+			@Override
+			public String title(){
+				return title;
+			}
+			
 			@Override
 			public String iconPath(){
 				return "/img/meteor.png";
@@ -373,6 +400,11 @@ public class TabbedMainFormTest{
 	public void testConfigureFrameSettingsFramePreferredSizeSet() throws Throwable{
 		Dimension size = new Dimension(50, 50);
 		tabbedForm = new AbstractTabbedMainForm(new HashMap<>()){
+			@Override
+			public String title(){
+				return title;
+			}
+			
 			@Override
 			public Dimension framePreferredSize(){
 				return size;

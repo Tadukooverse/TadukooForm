@@ -30,6 +30,11 @@ public interface MainForm extends Form{
 	JFrame asFrame();
 	
 	/**
+	 * @return The title to use for this Main Form
+	 */
+	String title();
+	
+	/**
 	 * @return The default {@link CloseOperation} to use for this Main Form
 	 */
 	default CloseOperation defaultCloseOperation(){
@@ -57,6 +62,9 @@ public interface MainForm extends Form{
 	 */
 	@SuppressWarnings("MagicConstant")
 	default void configureFrameSettings(){
+		// Set the title
+		asFrame().setTitle(title());
+		
 		// Set default close operation
 		asFrame().setDefaultCloseOperation(defaultCloseOperation().getValue());
 		
