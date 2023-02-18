@@ -2,8 +2,8 @@ package com.github.tadukoo.view.form.main;
 
 import com.github.tadukoo.view.form.Form;
 
+import javax.swing.JComponent;
 import javax.swing.JLabel;
-import java.awt.Container;
 import java.util.Map;
 
 public class DummyForm implements Form{
@@ -14,7 +14,7 @@ public class DummyForm implements Form{
 	}
 	
 	@Override
-	public Container asComponent(){
+	public JComponent asComponent(){
 		return label;
 	}
 	

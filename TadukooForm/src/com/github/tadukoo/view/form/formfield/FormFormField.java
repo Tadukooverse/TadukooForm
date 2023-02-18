@@ -3,7 +3,7 @@ package com.github.tadukoo.view.form.formfield;
 import com.github.tadukoo.util.logger.EasyLogger;
 import com.github.tadukoo.view.font.FontFamily;
 import com.github.tadukoo.view.font.FontResourceLoader;
-import com.github.tadukoo.view.form.AbstractSimpleForm;
+import com.github.tadukoo.view.form.Form;
 import com.github.tadukoo.view.form.SimpleForm;
 import com.github.tadukoo.view.form.field.FieldType;
 import com.github.tadukoo.view.form.field.FormField;
@@ -17,13 +17,13 @@ import javax.swing.border.Border;
 import java.awt.GraphicsEnvironment;
 
 /**
- * Form Form Field is a {@link FormField} used to have a {@link AbstractSimpleForm Form} inside of a form.
+ * Form Form Field is a {@link FormField} used to have a {@link Form Form} inside of a form.
  *
  * @author Logan Ferree (Tadukoo)
  * @version Alpha v.0.4
  * @since Alpha v.0.2
  */
-public class FormFormField extends FormField<AbstractSimpleForm>{
+public class FormFormField extends FormField<Form>{
 	
 	/**
 	 * Builder to be used to create a {@link FormFormField}. It has the following parameters:
@@ -140,7 +140,7 @@ public class FormFormField extends FormField<AbstractSimpleForm>{
 	 * @version Alpha v.0.4
 	 * @since Alpha v.0.2
 	 */
-	public static class FormFormFieldBuilder extends FormFieldBuilder<AbstractSimpleForm>{
+	public static class FormFormFieldBuilder extends FormFieldBuilder<Form>{
 		
 		/** Can't create FormFormFieldBuilder outside of FormFormField */
 		private FormFormFieldBuilder(){
@@ -161,7 +161,7 @@ public class FormFormField extends FormField<AbstractSimpleForm>{
 		
 		/** {@inheritDoc} */
 		@Override
-		public FormFormFieldBuilder defaultValue(AbstractSimpleForm defaultValue){
+		public FormFormFieldBuilder defaultValue(Form defaultValue){
 			super.defaultValue(defaultValue);
 			return this;
 		}
@@ -323,7 +323,7 @@ public class FormFormField extends FormField<AbstractSimpleForm>{
 	 *                   - can be ignored if you specify your own FontResourceLoader
 	 * @param fontResourceLoader The {@link FontResourceLoader} to use for fonts on this field
 	 */
-	private FormFormField(String key, AbstractSimpleForm defaultValue,
+	private FormFormField(String key, Form defaultValue,
 	                      LabelType labelType, SizablePaint labelForegroundPaint, SizablePaint labelBackgroundPaint,
 	                      FontFamily labelFontFamily, int labelFontStyle, int labelFontSize,
 	                      ShapeInfo labelShape, Border labelBorder,
@@ -349,15 +349,15 @@ public class FormFormField extends FormField<AbstractSimpleForm>{
 	/** {@inheritDoc} */
 	@Override
 	public JComponent getJustComponent(){
-		AbstractSimpleForm form = getDefaultValue();
+		Form form = getDefaultValue();
 		
-		return form != null?form:new JLabel("No value");
+		return form != null?form.asComponent():new JLabel("No value");
 	}
 	
 	/** {@inheritDoc} */
 	@Override
-	public AbstractSimpleForm getValueFromJustComponent(JComponent component){
-		if(component instanceof AbstractSimpleForm form){
+	public Form getValueFromJustComponent(JComponent component){
+		if(component instanceof Form form){
 			form.saveValues();
 			return form;
 		}else{
