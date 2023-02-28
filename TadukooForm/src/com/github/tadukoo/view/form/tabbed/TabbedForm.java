@@ -76,8 +76,8 @@ public interface TabbedForm extends Form, OrderedMappedPojo{
 	 * @param title The title for the tab, also used as the key
 	 * @param tab The {@link Form} tab to be added
 	 */
-	default void addTab(String title, Form tab){
-		addTab(title, tab, defaultTabLabelType());
+	default void addTabToForm(String title, Form tab){
+		addTabToForm(title, tab, defaultTabLabelType());
 	}
 	
 	/**
@@ -88,7 +88,7 @@ public interface TabbedForm extends Form, OrderedMappedPojo{
 	 * @param tab The {@link Form} tab to be added
 	 * @param tabLabelType The {@link TabLabelType} to be used to create the tab's label
 	 */
-	default void addTab(String title, Form tab, TabLabelType tabLabelType){
+	default void addTabToForm(String title, Form tab, TabLabelType tabLabelType){
 		// Determine the tab label based on the given type
 		Component tabLabel = switch(tabLabelType){
 			case SIMPLE_LABEL -> new JLabel(title);
@@ -101,7 +101,7 @@ public interface TabbedForm extends Form, OrderedMappedPojo{
 		};
 		
 		// Send to the other addTab that takes a component
-		addTab(title, tab, tabLabel);
+		addTabToForm(title, tab, tabLabel);
 	}
 	
 	/**
@@ -112,7 +112,7 @@ public interface TabbedForm extends Form, OrderedMappedPojo{
 	 * @param tab The {@link Form} tab to be added
 	 * @param customTabLabel The component to use for the tab's label
 	 */
-	default void addTab(String title, Form tab, Component customTabLabel){
+	default void addTabToForm(String title, Form tab, Component customTabLabel){
 		// Add tha tab to the value and tabs map and add its component to this tabbed pane
 		setItem(title, tab);
 		getTabMap().put(title, tab);

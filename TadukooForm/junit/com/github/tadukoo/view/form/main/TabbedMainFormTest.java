@@ -72,7 +72,7 @@ public class TabbedMainFormTest{
 			@Override
 			public void setDefaultTabs(){
 				weSetThoseFields = true;
-				addTab("Test", innerForm);
+				addTabToForm("Test", innerForm);
 			}
 		};
 	}
@@ -109,7 +109,7 @@ public class TabbedMainFormTest{
 			@Override
 			public void setDefaultTabs(){
 				weSetThoseFields = true;
-				addTab("Test", innerForm);
+				addTabToForm("Test", innerForm);
 			}
 		};
 		Map<String, Object> map = tabbedForm.getMap();
@@ -264,7 +264,7 @@ public class TabbedMainFormTest{
 				// Do nothing
 			}
 		};
-		tabbedForm.addTab("Derp", tab, TabLabelType.SIMPLE_LABEL);
+		tabbedForm.addTabToForm("Derp", tab, TabLabelType.SIMPLE_LABEL);
 		assertEquals(tab, tabbedForm.getItem("Derp"));
 		Collection<Form> tabs = tabbedForm.getAllTabs();
 		assertEquals(2, tabs.size());
@@ -288,7 +288,7 @@ public class TabbedMainFormTest{
 			}
 		};
 		JLabel label = new JLabel("Yessir");
-		tabbedForm.addTab("Derp", tab, label);
+		tabbedForm.addTabToForm("Derp", tab, label);
 		assertEquals(tab, tabbedForm.getItem("Derp"));
 		Collection<Form> tabs = tabbedForm.getAllTabs();
 		assertEquals(2, tabs.size());
@@ -316,7 +316,7 @@ public class TabbedMainFormTest{
 	@Test
 	public void testGetNumTabs() throws Throwable{
 		assertEquals(1, tabbedForm.getNumTabs());
-		tabbedForm.addTab("Test 2", new AbstractSimpleForm(new HashMap<>()){
+		tabbedForm.addTabToForm("Test 2", new AbstractSimpleForm(new HashMap<>()){
 			@Override
 			public void setDefaultFields(){
 				// Do nothing
@@ -385,7 +385,7 @@ public class TabbedMainFormTest{
 			@Override
 			public void setDefaultTabs(){
 				weSetThoseFields = true;
-				addTab("Test", innerForm);
+				addTabToForm("Test", innerForm);
 			}
 		};
 		assertNotNull(tabbedForm.asFrame().getIconImage());
@@ -417,7 +417,7 @@ public class TabbedMainFormTest{
 			@Override
 			public void setDefaultTabs(){
 				weSetThoseFields = true;
-				addTab("Test", innerForm);
+				addTabToForm("Test", innerForm);
 			}
 		};
 		assertTrue(tabbedForm.asComponent().isPreferredSizeSet());
