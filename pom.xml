@@ -17,7 +17,6 @@
 		<module>TadukooFormFields</module>
 		<module>TadukooForm</module>
 		<module>TadukooFormComponents</module>
-		<module>TadukooFormJUnit</module>
 	</modules>
 	<properties>
 		<!-- Info -->

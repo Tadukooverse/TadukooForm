@@ -97,7 +97,7 @@ public class FormFieldTest{
 	}
 	
 	@Test
-	public void tesetDefaultLabelForegroundPaint(){
+	public void testDefaultLabelForegroundPaint(){
 		assertNull(field.getLabelForegroundPaint());
 	}
 	
