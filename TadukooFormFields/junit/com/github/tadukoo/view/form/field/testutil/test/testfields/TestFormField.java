@@ -34,7 +34,7 @@ import java.util.logging.Level;
  */
 public class TestFormField extends FormField<String>{
 	/** The {@link FieldType} used in this class */
-	public static final FieldType FIELD_TYPE = FieldType.STRING;
+	public static final FieldType FIELD_TYPE = FieldType.SINGLE_LINE_STRING;
 	/** A {@link FieldType} to use as an incorrect {@link FieldType} */
 	public static final FieldType WRONG_FIELD_TYPE = FieldType.BOOLEAN;
 	/** A value to use for testing setting the key */

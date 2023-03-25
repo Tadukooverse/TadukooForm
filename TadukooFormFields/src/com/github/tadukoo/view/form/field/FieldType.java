@@ -20,8 +20,12 @@ public enum FieldType{
 	SHORT,
 	/** A long field */
 	LONG,
+	/** A label field */
+	LABEL,
 	/** A string field */
-	STRING,
+	SINGLE_LINE_STRING,
+	/** A password field */
+	PASSWORD,
 	/** A Date field */
 	DATE,
 	/** A drop-down field */

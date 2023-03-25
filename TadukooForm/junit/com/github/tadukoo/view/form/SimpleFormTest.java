@@ -4,7 +4,7 @@ import com.github.tadukoo.util.pojo.AbstractMappedPojo;
 import com.github.tadukoo.util.pojo.MappedPojo;
 import com.github.tadukoo.view.form.field.FormField;
 import com.github.tadukoo.view.form.field.LabelType;
-import com.github.tadukoo.view.form.field.StringFormField;
+import com.github.tadukoo.view.form.field.string.SingleLineStringFormField;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -29,9 +29,8 @@ public class SimpleFormTest{
 	
 	@BeforeEach
 	public void setup() throws Throwable{
-		field = StringFormField.builder()
+		field = SingleLineStringFormField.builder()
 				.labelType(LabelType.NONE)
-				.stringFieldType(StringFormField.StringFieldType.NORMAL)
 				.key("Derp").defaultValue("No")
 				.build();
 		simpleForm = new AbstractSimpleForm(new HashMap<>()){
@@ -66,7 +65,7 @@ public class SimpleFormTest{
 			@Override
 			public void setDefaultFields(){
 				weSetThoseFields = true;
-				addField(StringFormField.builder()
+				addField(SingleLineStringFormField.builder()
 						.key("Derp").defaultValue("No")
 						.build());
 			}
@@ -205,7 +204,7 @@ public class SimpleFormTest{
 	
 	@Test
 	public void testAddField(){
-		simpleForm.addField(StringFormField.builder()
+		simpleForm.addField(SingleLineStringFormField.builder()
 				.key("Test").defaultValue("Yes")
 				.build());
 		assertTrue(simpleForm.hasItem("Test"));
@@ -273,8 +272,7 @@ public class SimpleFormTest{
 	
 	@Test
 	public void testCreateComponentsTitledBorder() throws Throwable{
-		field = StringFormField.builder()
-				.stringFieldType(StringFormField.StringFieldType.NORMAL)
+		field = SingleLineStringFormField.builder()
 				.key("Derp").defaultValue("No")
 				.labelType(LabelType.TITLED_BORDER)
 				.build();
@@ -296,8 +294,7 @@ public class SimpleFormTest{
 	
 	@Test
 	public void testCreateComponentsNoLabel() throws Throwable{
-		field = StringFormField.builder()
-				.stringFieldType(StringFormField.StringFieldType.NORMAL)
+		field = SingleLineStringFormField.builder()
 				.key("Derp").defaultValue("No")
 				.labelType(LabelType.NONE)
 				.build();

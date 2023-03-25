@@ -8,7 +8,7 @@ import com.github.tadukoo.view.constants.TabPlacement;
 import com.github.tadukoo.view.form.AbstractSimpleForm;
 import com.github.tadukoo.view.form.Form;
 import com.github.tadukoo.view.form.SimpleForm;
-import com.github.tadukoo.view.form.field.StringFormField;
+import com.github.tadukoo.view.form.field.string.SingleLineStringFormField;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -42,7 +42,7 @@ public class TabbedFormTest{
 		innerForm = new AbstractSimpleForm(new HashMap<>()){
 			@Override
 			public void setDefaultFields(){
-				addField(StringFormField.builder()
+				addField(SingleLineStringFormField.builder()
 						.key("Derp").defaultValue("No")
 						.build());
 			}

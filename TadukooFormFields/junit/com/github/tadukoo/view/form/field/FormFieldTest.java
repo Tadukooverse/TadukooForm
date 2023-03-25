@@ -61,7 +61,7 @@ public class FormFieldTest extends BaseFormFieldTest<String>{
 		
 		@Override
 		public FormField<String> build(){
-			return new TestFormField(FieldType.STRING, key, defaultValue,
+			return new TestFormField(FieldType.SINGLE_LINE_STRING, key, defaultValue,
 					labelType, labelForegroundPaint, labelBackgroundPaint,
 					labelFontFamily, labelFontStyle, labelFontSize, labelShape, labelBorder,
 					rowPos, colPos, rowSpan, colSpan,
@@ -73,7 +73,7 @@ public class FormFieldTest extends BaseFormFieldTest<String>{
 	/** {@inheritDoc} */
 	public FormFieldTest() throws Throwable{
 		super(FormFieldTestValues.<String>builder()
-				.fieldType(FieldType.STRING)
+				.fieldType(FieldType.SINGLE_LINE_STRING)
 				.testDefaultValue("Yes")
 				.goodComponent(new JLabel((String) null))
 				.badComponent(new JTextField("Derp"))

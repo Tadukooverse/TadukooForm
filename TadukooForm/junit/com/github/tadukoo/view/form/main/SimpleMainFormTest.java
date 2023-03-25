@@ -5,7 +5,7 @@ import com.github.tadukoo.util.pojo.MappedPojo;
 import com.github.tadukoo.view.constants.CloseOperation;
 import com.github.tadukoo.view.form.field.FormField;
 import com.github.tadukoo.view.form.field.LabelType;
-import com.github.tadukoo.view.form.field.StringFormField;
+import com.github.tadukoo.view.form.field.string.SingleLineStringFormField;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -33,9 +33,8 @@ public class SimpleMainFormTest{
 	
 	@BeforeEach
 	public void setup() throws Throwable{
-		field = StringFormField.builder()
+		field = SingleLineStringFormField.builder()
 				.labelType(LabelType.NONE)
-				.stringFieldType(StringFormField.StringFieldType.NORMAL)
 				.key("Derp").defaultValue("No")
 				.build();
 		title = "Test Title";
@@ -81,7 +80,7 @@ public class SimpleMainFormTest{
 			@Override
 			public void setDefaultFields(){
 				weSetThoseFields = true;
-				addField(StringFormField.builder()
+				addField(SingleLineStringFormField.builder()
 						.key("Derp").defaultValue("No")
 						.build());
 			}
@@ -220,7 +219,7 @@ public class SimpleMainFormTest{
 	
 	@Test
 	public void testAddField(){
-		simpleForm.addField(StringFormField.builder()
+		simpleForm.addField(SingleLineStringFormField.builder()
 				.key("Test").defaultValue("Yes")
 				.build());
 		assertTrue(simpleForm.hasItem("Test"));

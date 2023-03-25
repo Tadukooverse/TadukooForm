@@ -39,7 +39,7 @@ public class FormFieldTestValuesTest{
 	
 	@BeforeAll
 	public static void setup() throws IOException{
-		fieldType = FieldType.STRING;
+		fieldType = FieldType.SINGLE_LINE_STRING;
 		testDefaultValue = "Derp";
 		goodComponent = new JLabel(("Yep sure"));
 		defTestValues = FormFieldTestValues.<String>builder()

@@ -6,6 +6,7 @@ import com.github.tadukoo.util.pojo.AbstractOrderedMappedPojo;
 import com.github.tadukoo.util.pojo.OrderedMappedPojo;
 import com.github.tadukoo.util.tuple.Pair;
 import com.github.tadukoo.view.components.TadukooTable;
+import com.github.tadukoo.view.form.field.string.SingleLineStringFormField;
 import com.github.tadukoo.view.form.field.testutil.BaseFormFieldTest;
 import com.github.tadukoo.view.form.field.testutil.FormFieldTestValues;
 import org.junit.jupiter.api.Test;
@@ -71,7 +72,7 @@ public class TableFormFieldTest extends BaseFormFieldTest<List<OrderedMappedPojo
 	@Test
 	public void testSetSingleColumnDefFormField() throws Throwable{
 		String fieldName = "Test";
-		FormField<String> formField = StringFormField.builder().build();
+		FormField<String> formField = SingleLineStringFormField.builder().build();
 		TableFormField field = TableFormField.builder()
 				.columnDef(fieldName, formField)
 				.build();
