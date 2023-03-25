@@ -173,6 +173,10 @@ public class DateForm extends AbstractSimpleForm{
 	 * @return The currently set {@link Date}
 	 */
 	public Date getDate(){
-		return DateUtil.createDate(getMonth(), getDay(), getYear());
+		Month month = getMonth();
+		if(month == null){
+			return null;
+		}
+		return DateUtil.createDate(month, getDay(), getYear());
 	}
 }

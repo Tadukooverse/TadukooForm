@@ -24,6 +24,15 @@
 			<groupId>${junit.platform.groupID}</groupId>
 			<artifactId>${junit.platform.artifactID}</artifactId>
 		</dependency>
+		<!-- Tadukoo Form Fields JUnit Dependency -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>TadukooFormFields</artifactId>
+			<version>${project.version}</version>
+			<classifier>tests</classifier>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 	<build>
 		<sourceDirectory>${directory.source}</sourceDirectory>

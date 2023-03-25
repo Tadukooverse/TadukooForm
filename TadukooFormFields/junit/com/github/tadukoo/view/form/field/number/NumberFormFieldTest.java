@@ -5,24 +5,21 @@ import com.github.tadukoo.view.font.FontFamily;
 import com.github.tadukoo.view.font.FontResourceLoader;
 import com.github.tadukoo.view.form.field.FieldType;
 import com.github.tadukoo.view.form.field.LabelType;
+import com.github.tadukoo.view.form.field.testutil.BaseFormFieldTest;
+import com.github.tadukoo.view.form.field.testutil.FormFieldTestValues;
 import com.github.tadukoo.view.paint.SizablePaint;
 import com.github.tadukoo.view.shapes.ShapeInfo;
 import org.junit.jupiter.api.Test;
 
-import javax.swing.JComponent;
-import javax.swing.JLabel;
 import javax.swing.JSpinner;
-import javax.swing.SpinnerModel;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.border.Border;
 
 import java.awt.GraphicsEnvironment;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class NumberFormFieldTest{
+public class NumberFormFieldTest extends BaseFormFieldTest<Integer>{
 	
 	private static class TestFormField extends NumberFormField<Integer>{
 		
@@ -52,6 +49,11 @@ public class NumberFormFieldTest{
 	
 	private static class TestFormFieldBuilder extends NumberFormField.NumberFormFieldBuilder<Integer>{
 		
+		private TestFormFieldBuilder(){
+			defaultValue = 0;
+			stepSize = 1;
+		}
+		
 		@Override
 		public NumberFormField<Integer> build(){
 			return new TestFormField(FieldType.INT, key, defaultValue,
@@ -65,47 +67,27 @@ public class NumberFormFieldTest{
 		}
 	}
 	
-	private NumberFormField<Integer> field = new TestFormFieldBuilder().stepSize(54).build();
+	public NumberFormFieldTest() throws Throwable{
+		super(FormFieldTestValues.<Integer>builder()
+				.fieldType(FieldType.INT)
+				.defaultValue(0)
+				.testDefaultValue(42)
+				.goodComponent(new JSpinner(
+						new SpinnerNumberModel(0, null, null, 1)))
+				.build(), TestFormFieldBuilder::new);
+	}
+	
+	private NumberFormField<Integer> getDefaultField(){
+		return (NumberFormField<Integer>) defaultFormField;
+	}
 	
 	@Test
 	public void testDefaultMinValue(){
-		assertNull(field.getMinValue());
+		assertNull(getDefaultField().getMinValue());
 	}
 	
 	@Test
 	public void testDefaultMaxValue(){
-		assertNull(field.getMaxValue());
-	}
-	
-	@Test
-	public void testSettings(){
-		assertEquals(Integer.valueOf(54), field.getStepSize());
-	}
-	
-	@Test
-	public void testGetJustComponent() throws Throwable{
-		field = (NumberFormField<Integer>) new TestFormFieldBuilder().minValue(20).maxValue(105)
-				.stepSize(54).defaultValue(42).build();
-		
-		JComponent component = field.getJustComponent();
-		assertTrue(component instanceof JSpinner);
-		SpinnerModel model = ((JSpinner) component).getModel();
-		assertTrue(model instanceof SpinnerNumberModel);
-		assertEquals(20, ((SpinnerNumberModel) model).getMinimum());
-		assertEquals(105, ((SpinnerNumberModel) model).getMaximum());
-		assertEquals(54, ((SpinnerNumberModel) model).getStepSize());
-		assertEquals(42, model.getValue());
-	}
-	
-	@Test
-	public void testGetValueFromJustComponent(){
-		assertEquals(Integer.valueOf(120),
-				field.getValueFromJustComponent(new JSpinner(
-						new SpinnerNumberModel(120, null, null, 54))));
-	}
-	
-	@Test
-	public void testGetValueFromJustComponentNotSpinner(){
-		assertNull(field.getValueFromJustComponent(new JLabel("Test")));
+		assertNull(getDefaultField().getMaxValue());
 	}
 }

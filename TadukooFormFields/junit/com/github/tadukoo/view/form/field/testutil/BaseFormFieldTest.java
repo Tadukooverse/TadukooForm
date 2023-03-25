@@ -5,7 +5,6 @@ import com.github.tadukoo.util.functional.supplier.ThrowingSupplier;
 import com.github.tadukoo.util.logger.EasyLogger;
 import com.github.tadukoo.view.font.FontResourceLoader;
 import com.github.tadukoo.view.form.field.FormField;
-import com.github.tadukoo.view.form.field.FormFieldTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -33,7 +32,7 @@ public abstract class BaseFormFieldTest<Type>{
 	protected final FormField<Type> defaultFormField;
 	
 	/**
-	 * Constructs a new {@link FormFieldTest} with the given parameters
+	 * Constructs a new {@link BaseFormFieldTest} with the given parameters
 	 *
 	 * @param testVals The {@link FormFieldTestValues test values} to be used
 	 * @param builder The builder method to use to build the form field
