@@ -307,6 +307,108 @@ public class BadTestFormField extends TestFormField{
 	
 	/** {@inheritDoc} */
 	@Override
+	public void setLabelType(LabelType labelType){
+		super.setLabelType(WRONG_LABEL_TYPE);
+	}
+	
+	/** {@inheritDoc} */
+	@Override
+	public void setLabelForegroundPaint(SizablePaint labelForegroundPaint){
+		super.setLabelForegroundPaint(WRONG_LABEL_FOREGROUND_PAINT);
+	}
+	
+	/** {@inheritDoc} */
+	@Override
+	public void setLabelBackgroundPaint(SizablePaint labelBackgroundPaint){
+		super.setLabelBackgroundPaint(WRONG_LABEL_BACKGROUND_PAINT);
+	}
+	
+	/** {@inheritDoc} */
+	@Override
+	public void setLabelFontFamily(FontFamily labelFontFamily){
+		super.setLabelFontFamily(WRONG_LABEL_FONT_FAMILY);
+	}
+	
+	/** {@inheritDoc} */
+	@Override
+	public void setLabelFontStyle(int labelFontStyle){
+		super.setLabelFontStyle(WRONG_LABEL_FONT_STYLE);
+	}
+	
+	/** {@inheritDoc} */
+	@Override
+	public void setLabelFontSize(int labelFontSize){
+		super.setLabelFontSize(WRONG_LABEL_FONT_SIZE);
+	}
+	
+	/** {@inheritDoc} */
+	@Override
+	public void setLabelShape(ShapeInfo labelShape){
+		super.setLabelShape(WRONG_LABEL_SHAPE);
+	}
+	
+	/** {@inheritDoc} */
+	@Override
+	public void setLabelBorder(Border labelBorder){
+		super.setLabelBorder(WRONG_LABEL_BORDER);
+	}
+	
+	/** {@inheritDoc} */
+	@Override
+	public void setRowPos(int rowPos){
+		super.setRowPos(WRONG_ROW_POS);
+	}
+	
+	/** {@inheritDoc} */
+	@Override
+	public void setColPos(int colPos){
+		super.setColPos(WRONG_COL_POS);
+	}
+	
+	/** {@inheritDoc} */
+	@Override
+	public void setRowSpan(int rowSpan){
+		super.setRowSpan(WRONG_ROW_SPAN);
+	}
+	
+	/** {@inheritDoc} */
+	@Override
+	public void setColSpan(int colSpan){
+		super.setColSpan(WRONG_COL_SPAN);
+	}
+	
+	/** {@inheritDoc} */
+	@Override
+	public void setLogFontResourceLoaderWarnings(boolean logFontResourceLoaderWarnings){
+		super.setLogFontResourceLoaderWarnings(DEFAULT_LOG_FONT_RESOURCE_LOADER_WARNINGS);
+	}
+	
+	/** {@inheritDoc} */
+	@Override
+	public void setLogger(EasyLogger logger){
+		super.setLogger(WRONG_LOGGER);
+	}
+	
+	/** {@inheritDoc} */
+	@Override
+	public void setGraphEnv(GraphicsEnvironment graphEnv){
+		super.setGraphEnv(DEFAULT_GRAPH_ENV);
+	}
+	
+	/** {@inheritDoc} */
+	@Override
+	public void setFontFolder(String fontFolder){
+		super.setFontFolder(WRONG_FONT_FOLDER);
+	}
+	
+	/** {@inheritDoc} */
+	@Override
+	public void setFontResourceLoader(FontResourceLoader fontResourceLoader){
+		super.setFontResourceLoader(WRONG_FONT_RESOURCE_LOADER);
+	}
+	
+	/** {@inheritDoc} */
+	@Override
 	public JComponent getJustComponent(){
 		return null;
 	}

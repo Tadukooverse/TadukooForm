@@ -209,7 +209,7 @@ public abstract class BaseFormFieldTest<Type>{
 	 * @throws Throwable If anything goes wrong in setting + retrieving the key
 	 */
 	@Test
-	public void testSetKey() throws Throwable{
+	public void testSetBuilderKey() throws Throwable{
 		FormField<Type> field = builder.get().key(testVals.getTestKey()).build();
 		assertEquals(testVals.getTestKey(), field.getKey());
 	}
@@ -220,7 +220,7 @@ public abstract class BaseFormFieldTest<Type>{
 	 * @throws Throwable If anything goes wrong in setting + retrieving the default value
 	 */
 	@Test
-	public void testSetDefaultValue() throws Throwable{
+	public void testSetBuilderDefaultValue() throws Throwable{
 		FormField<Type> field = builder.get().defaultValue(testVals.getTestDefaultValue()).build();
 		assertEquals(testVals.getTestDefaultValue(), field.getDefaultValue());
 	}
@@ -231,7 +231,7 @@ public abstract class BaseFormFieldTest<Type>{
 	 * @throws Throwable If anything goes wrong in setting + retrieving the label type
 	 */
 	@Test
-	public void testSetLabelType() throws Throwable{
+	public void testSetBuilderLabelType() throws Throwable{
 		FormField<Type> field = builder.get().labelType(testVals.getTestLabelType()).build();
 		Assertions.assertEquals(testVals.getTestLabelType(), field.getLabelType());
 	}
@@ -242,7 +242,7 @@ public abstract class BaseFormFieldTest<Type>{
 	 * @throws Throwable If anything goes wrong in setting + retrieving the label foreground paint
 	 */
 	@Test
-	public void testSetLabelForegroundPaint() throws Throwable{
+	public void testSetBuilderLabelForegroundPaint() throws Throwable{
 		FormField<Type> field = builder.get().labelForegroundPaint(testVals.getTestLabelForegroundPaint()).build();
 		assertEquals(testVals.getTestLabelForegroundPaint(), field.getLabelForegroundPaint());
 	}
@@ -253,7 +253,7 @@ public abstract class BaseFormFieldTest<Type>{
 	 * @throws Throwable If anything goes wrong in setting + retrieving the label background paint
 	 */
 	@Test
-	public void testSetLabelBackgroundPaint() throws Throwable{
+	public void testSetBuilderLabelBackgroundPaint() throws Throwable{
 		FormField<Type> field = builder.get().labelBackgroundPaint(testVals.getTestLabelBackgroundPaint()).build();
 		assertEquals(testVals.getTestLabelBackgroundPaint(), field.getLabelBackgroundPaint());
 	}
@@ -264,7 +264,7 @@ public abstract class BaseFormFieldTest<Type>{
 	 * @throws Throwable If anything goes wrong in setting + retrieving the label font
 	 */
 	@Test
-	public void testSetLabelFont() throws Throwable{
+	public void testSetBuilderLabelFont() throws Throwable{
 		FormField<Type> field = builder.get()
 				.labelFont(testVals.getTestLabelFontFamily(), testVals.getTestLabelFontStyle(),
 						testVals.getTestLabelFontSize()).build();
@@ -279,7 +279,7 @@ public abstract class BaseFormFieldTest<Type>{
 	 * @throws Throwable If anything goes wrong in setting + retrieving the label shape
 	 */
 	@Test
-	public void testSetLabelShape() throws Throwable{
+	public void testSetBuilderLabelShape() throws Throwable{
 		FormField<Type> field = builder.get().labelShape(testVals.getTestLabelShape()).build();
 		assertEquals(testVals.getTestLabelShape(), field.getLabelShape());
 	}
@@ -290,7 +290,7 @@ public abstract class BaseFormFieldTest<Type>{
 	 * @throws Throwable If anything goes wrong in setting + retrieving the label border
 	 */
 	@Test
-	public void testSetLabelBorder() throws Throwable{
+	public void testSetBuilderLabelBorder() throws Throwable{
 		FormField<Type> field = builder.get().labelBorder(testVals.getTestLabelBorder()).build();
 		assertEquals(testVals.getTestLabelBorder(), field.getLabelBorder());
 	}
@@ -301,7 +301,7 @@ public abstract class BaseFormFieldTest<Type>{
 	 * @throws Throwable If anything goes wrong in setting + retrieving the row position
 	 */
 	@Test
-	public void testSetRowPos() throws Throwable{
+	public void testSetBuilderRowPos() throws Throwable{
 		FormField<Type> field = builder.get().rowPos(testVals.getTestRowPos()).build();
 		assertEquals(testVals.getTestRowPos(), field.getRowPos());
 	}
@@ -312,7 +312,7 @@ public abstract class BaseFormFieldTest<Type>{
 	 * @throws Throwable If anything goes wrong in setting + retrieving the column position
 	 */
 	@Test
-	public void testSetColPos() throws Throwable{
+	public void testSetBuilderColPos() throws Throwable{
 		FormField<Type> field = builder.get().colPos(testVals.getTestColPos()).build();
 		assertEquals(testVals.getTestColPos(), field.getColPos());
 	}
@@ -323,7 +323,7 @@ public abstract class BaseFormFieldTest<Type>{
 	 * @throws Throwable If anything goes wrong in setting + retrieving the row span
 	 */
 	@Test
-	public void testSetRowSpan() throws Throwable{
+	public void testSetBuilderRowSpan() throws Throwable{
 		FormField<Type> field = builder.get().rowSpan(testVals.getTestRowSpan()).build();
 		assertEquals(testVals.getTestRowSpan(), field.getRowSpan());
 	}
@@ -334,7 +334,7 @@ public abstract class BaseFormFieldTest<Type>{
 	 * @throws Throwable If anything goes wrong in setting + retrieving the column span
 	 */
 	@Test
-	public void testSetColSpan() throws Throwable{
+	public void testSetBuilderColSpan() throws Throwable{
 		FormField<Type> field = builder.get().colSpan(testVals.getTestColSpan()).build();
 		assertEquals(testVals.getTestColSpan(), field.getColSpan());
 	}
@@ -345,7 +345,7 @@ public abstract class BaseFormFieldTest<Type>{
 	 * @throws Throwable If anything goes wrong in setting + retrieving the logFontResourceLoaderWarnings value
 	 */
 	@Test
-	public void testSetLogFontResourceLoaderWarnings() throws Throwable{
+	public void testSetBuilderLogFontResourceLoaderWarnings() throws Throwable{
 		FormField<Type> field = builder.get()
 				.logFontResourceLoaderWarnings(testVals.getTestLogFontResourceLoaderWarnings()).build();
 		assertEquals(testVals.getTestLogFontResourceLoaderWarnings(), field.logFontResourceLoaderWarnings());
@@ -357,7 +357,7 @@ public abstract class BaseFormFieldTest<Type>{
 	 * @throws Throwable If anything goes wrong in setting + retrieving the {@link EasyLogger logger}
 	 */
 	@Test
-	public void testSetLogger() throws Throwable{
+	public void testSetBuilderLogger() throws Throwable{
 		FormField<Type> field = builder.get().logger(testVals.getTestLogger()).build();
 		assertEquals(testVals.getTestLogger(), field.getLogger());
 	}
@@ -368,7 +368,7 @@ public abstract class BaseFormFieldTest<Type>{
 	 * @throws Throwable If anything goes wrong in setting + retrieving the {@link GraphicsEnvironment graphEnv} value
 	 */
 	@Test
-	public void testSetGraphEnv() throws Throwable{
+	public void testSetBuilderGraphEnv() throws Throwable{
 		FormField<Type> field = builder.get().graphEnv(testVals.getTestGraphEnv()).build();
 		assertEquals(testVals.getTestGraphEnv(), field.getGraphEnv());
 	}
@@ -379,7 +379,7 @@ public abstract class BaseFormFieldTest<Type>{
 	 * @throws Throwable If anything goes wrong in setting + retrieving the font folder value
 	 */
 	@Test
-	public void testSetFontFolder() throws Throwable{
+	public void testSetBuilderFontFolder() throws Throwable{
 		FormField<Type> field = builder.get().fontFolder(testVals.getTestFontFolder()).build();
 		assertEquals(testVals.getTestFontFolder(), field.getFontFolder());
 	}
@@ -390,7 +390,7 @@ public abstract class BaseFormFieldTest<Type>{
 	 * @throws Throwable If anything goes wrong in setting + retrieving the {@link FontResourceLoader fontResourceLoader}
 	 */
 	@Test
-	public void testSetFontResourceLoader() throws Throwable{
+	public void testSetBuilderFontResourceLoader() throws Throwable{
 		FormField<Type> field = builder.get().fontResourceLoader(testVals.getTestFontResourceLoader()).build();
 		assertEquals(testVals.getTestFontResourceLoader(), field.getFontResourceLoader());
 	}
@@ -460,6 +460,163 @@ public abstract class BaseFormFieldTest<Type>{
 		assertEquals(testVals.getTestFontFolder(), field.getFontFolder());
 		assertEquals(testVals.getTestFontResourceLoader(), field.getFontResourceLoader());
 		checkExtraSettings(field);
+	}
+	
+	/*
+	 * Test the set methods in the Form Field
+	 */
+	
+	/**
+	 * Tests the setLabelType method
+	 */
+	@Test
+	public void testSetLabelType(){
+		defaultFormField.setLabelType(testVals.getTestLabelType());
+		assertEquals(testVals.getTestLabelType(), defaultFormField.getLabelType());
+	}
+	
+	/**
+	 * Tests the setLabelForegroundPaint method
+	 */
+	@Test
+	public void testSetLabelForegroundPaint(){
+		defaultFormField.setLabelForegroundPaint(testVals.getTestLabelForegroundPaint());
+		assertEquals(testVals.getTestLabelForegroundPaint(), defaultFormField.getLabelForegroundPaint());
+	}
+	
+	/**
+	 * Tests the setLabelBackgroundPaint method
+	 */
+	@Test
+	public void testSetLabelBackgroundPaint(){
+		defaultFormField.setLabelBackgroundPaint(testVals.getTestLabelBackgroundPaint());
+		assertEquals(testVals.getTestLabelBackgroundPaint(), defaultFormField.getLabelBackgroundPaint());
+	}
+	
+	/**
+	 * Tests the setLabelFontFamily method
+	 */
+	@Test
+	public void testSetLabelFontFamily(){
+		defaultFormField.setLabelFontFamily(testVals.getTestLabelFontFamily());
+		assertEquals(testVals.getTestLabelFontFamily(), defaultFormField.getLabelFontFamily());
+	}
+	
+	/**
+	 * Tests the setLabelFontStyle method
+	 */
+	@Test
+	public void testSetLabelFontStyle(){
+		defaultFormField.setLabelFontStyle(testVals.getTestLabelFontStyle());
+		assertEquals(testVals.getTestLabelFontStyle(), defaultFormField.getLabelFontStyle());
+	}
+	
+	/**
+	 * Tests the setLabelFontSize method
+	 */
+	@Test
+	public void testSetLabelFontSize(){
+		defaultFormField.setLabelFontSize(testVals.getTestLabelFontSize());
+		assertEquals(testVals.getTestLabelFontSize(), defaultFormField.getLabelFontSize());
+	}
+	
+	/**
+	 * Tests the setLabelShape method
+	 */
+	@Test
+	public void testSetLabelShape(){
+		defaultFormField.setLabelShape(testVals.getTestLabelShape());
+		assertEquals(testVals.getTestLabelShape(), defaultFormField.getLabelShape());
+	}
+	
+	/**
+	 * Tests the setLabelBorder method
+	 */
+	@Test
+	public void testSetLabelBorder(){
+		defaultFormField.setLabelBorder(testVals.getTestLabelBorder());
+		assertEquals(testVals.getTestLabelBorder(), defaultFormField.getLabelBorder());
+	}
+	
+	/**
+	 * Tests the setRowPos method
+	 */
+	@Test
+	public void testSetRowPos(){
+		defaultFormField.setRowPos(testVals.getTestRowPos());
+		assertEquals(testVals.getTestRowPos(), defaultFormField.getRowPos());
+	}
+	
+	/**
+	 * Tests the setColPos method
+	 */
+	@Test
+	public void testSetColPos(){
+		defaultFormField.setColPos(testVals.getTestColPos());
+		assertEquals(testVals.getTestColPos(), defaultFormField.getColPos());
+	}
+	
+	/**
+	 * Tests the setRowSpan method
+	 */
+	@Test
+	public void testSetRowSpan(){
+		defaultFormField.setRowSpan(testVals.getTestRowSpan());
+		assertEquals(testVals.getTestRowSpan(), defaultFormField.getRowSpan());
+	}
+	
+	/**
+	 * Tests the setColSpan method
+	 */
+	@Test
+	public void testSetColSpan(){
+		defaultFormField.setColSpan(testVals.getTestColSpan());
+		assertEquals(testVals.getTestColSpan(), defaultFormField.getColSpan());
+	}
+	
+	/**
+	 * Tests the setLogFontResourceLoaderWarnings method
+	 */
+	@Test
+	public void testSetLogFontResourceLoaderWarnings(){
+		defaultFormField.setLogFontResourceLoaderWarnings(testVals.getTestLogFontResourceLoaderWarnings());
+		assertEquals(testVals.getTestLogFontResourceLoaderWarnings(), defaultFormField.logFontResourceLoaderWarnings());
+	}
+	
+	/**
+	 * Tests the setLogger method
+	 */
+	@Test
+	public void testSetLogger(){
+		defaultFormField.setLogger(testVals.getTestLogger());
+		assertEquals(testVals.getTestLogger(), defaultFormField.getLogger());
+	}
+	
+	/**
+	 * Tests the setGraphEnv method
+	 */
+	@Test
+	public void testSetGraphEnv(){
+		defaultFormField.setGraphEnv(testVals.getTestGraphEnv());
+		assertEquals(testVals.getTestGraphEnv(), defaultFormField.getGraphEnv());
+	}
+	
+	/**
+	 * Tests the setFontFolder method
+	 */
+	@Test
+	public void testSetFontFolder(){
+		defaultFormField.setFontFolder(testVals.getTestFontFolder());
+		assertEquals(testVals.getTestFontFolder(), defaultFormField.getFontFolder());
+	}
+	
+	/**
+	 * Tests the setFontResourceLoader method
+	 */
+	@Test
+	public void testSetFontResourceLoader(){
+		defaultFormField.setFontResourceLoader(testVals.getTestFontResourceLoader());
+		assertEquals(testVals.getTestFontResourceLoader(), defaultFormField.getFontResourceLoader());
 	}
 	
 	/*
