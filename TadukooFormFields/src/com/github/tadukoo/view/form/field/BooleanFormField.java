@@ -19,7 +19,7 @@ import java.awt.GraphicsEnvironment;
  * @version Alpha v.0.4
  * @since Alpha v.0.2
  */
-public class BooleanFormField extends FormField<Boolean>{
+public class BooleanFormField extends FormField<Boolean> implements IsEditable{
 	
 	/**
 	 * Builder to be used to create a {@link BooleanFormField}. It has the following parameters:
@@ -314,7 +314,7 @@ public class BooleanFormField extends FormField<Boolean>{
 	}
 	
 	/** Whether this field can be edited or not */
-	private final boolean editable;
+	private boolean editable;
 	
 	/**
 	 * Creates a new BooleanFormField with the given parameters
@@ -369,11 +369,16 @@ public class BooleanFormField extends FormField<Boolean>{
 		return new BooleanFormFieldBuilder();
 	}
 	
-	/**
-	 * @return Whether this field can be edited or not
-	 */
+	/** {@inheritDoc} */
+	@Override
 	public boolean isEditable(){
 		return editable;
+	}
+	
+	/** {@inheritDoc} */
+	@Override
+	public void setEditable(boolean editable){
+		this.editable = editable;
 	}
 	
 	/** {@inheritDoc} */

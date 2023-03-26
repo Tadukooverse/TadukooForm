@@ -22,9 +22,13 @@ public class BooleanFormFieldTest extends BaseFormFieldTest<Boolean>{
 				.build(), BooleanFormField::builder);
 	}
 	
+	private BooleanFormField getDefaultField(){
+		return (BooleanFormField) defaultFormField;
+	}
+	
 	@Test
 	public void testDefaultEditable(){
-		assertTrue(((BooleanFormField) defaultFormField).isEditable());
+		assertTrue(getDefaultField().isEditable());
 	}
 	
 	@Override
@@ -35,6 +39,12 @@ public class BooleanFormFieldTest extends BaseFormFieldTest<Boolean>{
 	@Override
 	protected void checkExtraSettings(FormField<Boolean> field){
 		assertFalse(((BooleanFormField) field).isEditable());
+	}
+	
+	@Test
+	public void testSetEditable(){
+		getDefaultField().setEditable(false);
+		assertFalse(getDefaultField().isEditable());
 	}
 	
 	@Test
